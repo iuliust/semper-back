@@ -9,5 +9,6 @@ import { PhotoService, photoProviders } from './photo/';
         ...photoProviders,
         PhotoService,
     ],
+    exports: [  ]
 })
 export class EntitiesModule {}

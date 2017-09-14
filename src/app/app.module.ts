@@ -6,7 +6,6 @@ import { DatabaseModule } from '../database/database.module';
 
 @Module({
   modules: [
-    DatabaseModule,
     EntitiesModule,
   ],
   controllers: [ UserController ]
