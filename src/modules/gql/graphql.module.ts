@@ -13,6 +13,6 @@ export class GraphQlModule implements NestModule {
         return consumer.apply([bodyParser.json(), graphqlExpress({schema})])
             .forRoutes({ path: '/graphql', method: RequestMethod.ALL })
             .apply(graphiqlExpress({ endpointURL: '/graphql' }))
-            .forRoutes({ path: '/graphiql', method: RequestMethod.ALL });
+            .forRoutes({ path: '/graphiql', method: RequestMethod.GET });
     }
 }
