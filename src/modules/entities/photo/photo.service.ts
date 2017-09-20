@@ -7,4 +7,9 @@ export class PhotoService {
     constructor(
         @Inject('PhotoRepositoryToken') private photoRepository: Repository<Photo>
     ) {}
+
+    async listAllPhotos(): Promise<Photo[]> {
+        const photos = await this.photoRepository.find();
+        return photos;
+    }
 }

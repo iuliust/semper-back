@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { createConnection, Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-import { Photo } from '../entities';
+import { Photo, User } from '../entities';
 
 export const databaseProviders = [
     {
@@ -15,8 +15,9 @@ export const databaseProviders = [
             database: 'test',
             entities: [
                 Photo,
+                User,
             ],
             autoSchemaSync: true,
-        })
+        }).catch(console.log)
     }
 ];

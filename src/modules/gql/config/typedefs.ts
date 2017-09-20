@@ -9,7 +9,15 @@ export const typeDefs = `
         isPublished: Boolean
     }
 
+    type User {
+        id: Int!
+        userName: String!
+        email: String!
+        password: String!
+    }
+
     type Query {
         photos: [Photo]
+        users: [User]
     }
 `;
