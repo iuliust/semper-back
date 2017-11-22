@@ -2,6 +2,12 @@ import * as path from 'path';
 import { createConnection, Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 import { Photo, User } from '../entities';
+import { SqliteConnectionOptions } from 'typeorm/driver/sqlite/SqliteConnectionOptions';
+
+// const options: SqliteConnectionOptions = {
+//     type: 'sqlite',
+//     dropSchema: true,
+// };
 
 export const databaseProviders = [
     {
@@ -13,12 +19,17 @@ export const databaseProviders = [
             port: 3306,
             username: 'root',
             password: 'root',
-            database: 'test_database',
+            database: 'test_database.sqlite3',
             entities: [
                 Photo,
                 User,
             ],
             autoSchemaSync: true,
-        }).catch(console.log)
+        } as SqliteConnectionOptions)
+        .catch(console.log)
+        .then((connexion) => {
+            console.log(connexion);
+            return connexion;
+        })
     }
 ];

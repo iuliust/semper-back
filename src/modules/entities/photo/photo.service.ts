@@ -6,10 +6,14 @@ import { Photo } from './photo.entity';
 export class PhotoService {
     constructor(
         @Inject('PhotoRepositoryToken') private photoRepository: Repository<Photo>
-    ) {}
+    ) { }
 
     async listAllPhotos(): Promise<Photo[]> {
-        const photos = await this.photoRepository.find();
-        return photos;
+        try {
+            const photos = await this.photoRepository.find();
+            return photos;
+        } catch (err) {
+            console.error(err);
+        }
     }
 }
