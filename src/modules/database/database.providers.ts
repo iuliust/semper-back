@@ -8,11 +8,12 @@ export const databaseProviders = [
         provide: 'DbConnectionToken',
         useFactory: async () => await createConnection({
             type: 'sqlite',
+            dropSchema: true,
             host: 'localhost',
             port: 3306,
             username: 'root',
             password: 'root',
-            database: 'test',
+            database: 'test_database',
             entities: [
                 Photo,
                 User,
