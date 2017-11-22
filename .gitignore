@@ -3,6 +3,7 @@
 /package-lock.json
 /yarn-error.log
 /.vscode
+*.sqlite3
 
 # System Files
 .DS_Store
