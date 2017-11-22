@@ -33,7 +33,7 @@ export class UserService {
         const encryptedPassword: string = await this.bcryptHash(info.password);
         const userToCreate: User = this.userRepository.create({
             email: info.email,
-            userName: info.userName,
+            username: info.username,
             password: encryptedPassword,
         });
         const createdUser = await this.userRepository.save(userToCreate);
@@ -41,8 +41,8 @@ export class UserService {
         return { token, user: createdUser };
     }
     
-    async login(userName: string, password: string): Promise<UserToken> {
-        const foundUser = await this.userRepository.findOne({userName: userName});
+    async login(username: string, password: string): Promise<UserToken> {
+        const foundUser = await this.userRepository.findOne({username: username});
         const passwordIsCorrect = await this.bcryptCompare(password, foundUser.password);
         if (passwordIsCorrect) {
             const token = await this.signJwtToken({user: foundUser});

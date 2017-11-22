@@ -20,13 +20,13 @@ export class AuthController {
     
     @Post('login')
     async login(@Req() req, @Res() res, @Body() body) {
-        if (!body || !('userName' in body && 'password' in body)) {
+        if (!body || !('username' in body && 'password' in body)) {
             res.status(HttpStatus.BAD_REQUEST);
-            return res.send('must put userName and password in request body');
+            return res.send('must put username and password in request body');
         }
         try {
-            const {userName, password} = body;
-            const token = await this.userService.login(userName, password);
+            const {username, password} = body;
+            const token = await this.userService.login(username, password);
             res.status(HttpStatus.ACCEPTED)
                 .json(token);
         } catch (err) {
