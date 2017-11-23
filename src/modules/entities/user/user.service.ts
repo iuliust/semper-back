@@ -40,13 +40,17 @@ export class UserService {
         const token = await this.signJwtToken({user: createdUser});
         return { token, user: createdUser };
     }
+
+    async updateUser(user: Partial<User>): Promise<Partial<User>> {
+        return await this.userRepository.manager.save(user);
+    }
     
     async login(username: string, password: string): Promise<UserToken> {
-        const foundUser = await this.userRepository.findOne({username: username});
-        const passwordIsCorrect = await this.bcryptCompare(password, foundUser.password);
+        const user = await this.userRepository.findOne({username: username});
+        const passwordIsCorrect = await this.bcryptCompare(password, user.password);
         if (passwordIsCorrect) {
-            const token = await this.signJwtToken({user: foundUser});
-            return { token, user: foundUser };
+            const token = await this.signJwtToken({user});
+            return { token, user };
         } else {
             throw new Error('Supplied password didn\'t match the encrypted one');
         }

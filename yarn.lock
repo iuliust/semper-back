@@ -3,16 +3,16 @@
 
 
 "@nestjs/common@^4.0.0":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-4.3.3.tgz#2279fb2166caf80de109e57194bb48d7fd33e6d1"
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-4.3.4.tgz#1e093588d65f21df85f1cf4630ff2b8a1514e76e"
   dependencies:
     class-transformer "0.1.8"
     class-validator "0.7.3"
     cli-color "1.1.0"
 
 "@nestjs/core@^4.0.0":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-4.3.3.tgz#8a64d227367f12ff643a772e13a4de2d876f5fa4"
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/core/-/core-4.3.4.tgz#635aad26acd156fb7e0f7446badd66d147f1fc6c"
   dependencies:
     body-parser "1.17.2"
     express "4.16.2"
@@ -20,8 +20,8 @@
     optional "0.1.4"
 
 "@nestjs/microservices@^4.0.0":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-4.3.3.tgz#935a8f2055386e2813a60f6c70e68b9028afce2e"
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/microservices/-/microservices-4.3.4.tgz#f4e4b541d4d1afd102a58a03e8f3b1d1b9644700"
   dependencies:
     iterare "0.0.8"
     json-socket "^0.2.1"
@@ -29,14 +29,14 @@
     redis "^2.7.1"
 
 "@nestjs/testing@^4.0.0":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-4.3.3.tgz#6769cd31fe01aaa7f421876c04ab679f047a1392"
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-4.3.4.tgz#05b151a302bba96e83affd4975d5ece514bd3f60"
   dependencies:
     optional "0.1.4"
 
 "@nestjs/websockets@^4.0.0":
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-4.3.3.tgz#8d73e0308636cd302b64282d305fc25624f52da8"
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-4.3.4.tgz#aa0c0eda715ec1da10ebc86d306f792f5b042c28"
   dependencies:
     iterare "0.0.8"
     socket.io "^2.0.3"

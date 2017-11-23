@@ -4,11 +4,6 @@ import { createConnection, Entity, Column, PrimaryGeneratedColumn } from 'typeor
 import { Photo, User } from '../entities';
 import { SqliteConnectionOptions } from 'typeorm/driver/sqlite/SqliteConnectionOptions';
 
-// const options: SqliteConnectionOptions = {
-//     type: 'sqlite',
-//     dropSchema: true,
-// };
-
 export const databaseProviders = [
     {
         provide: 'DbConnectionToken',
@@ -27,9 +22,5 @@ export const databaseProviders = [
             autoSchemaSync: true,
         } as SqliteConnectionOptions)
         .catch(console.log)
-        .then((connexion) => {
-            console.log(connexion);
-            return connexion;
-        })
     }
 ];

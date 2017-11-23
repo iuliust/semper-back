@@ -26,9 +26,9 @@ export class AuthController {
         }
         try {
             const {username, password} = body;
-            const token = await this.userService.login(username, password);
+            const response = await this.userService.login(username, password);
             res.status(HttpStatus.ACCEPTED)
-                .json(token);
+                .json(response);
         } catch (err) {
             res.status(HttpStatus.BAD_REQUEST);
             return res.send(err);
